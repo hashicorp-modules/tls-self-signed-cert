@@ -44,11 +44,11 @@ output "leaf_public_key_openssh" {
   value = "${tls_private_key.leaf.public_key_openssh}"
 }
 
-output "leaf_request_pem" {
+output "leaf_cert_request_pem" {
   value = "${tls_cert_request.leaf.cert_request_pem}"
 }
 
-output "leaf_pem" {
+output "leaf_cert_pem" {
   value = "${tls_locally_signed_cert.leaf.cert_pem}"
 }
 

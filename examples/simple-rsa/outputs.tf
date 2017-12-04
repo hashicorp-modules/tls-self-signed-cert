@@ -42,12 +42,12 @@ output "leaf_public_key_openssh" {
   value = "${module.tls_self_signed_cert.leaf_public_key_openssh}"
 }
 
-output "leaf_request_pem" {
-  value = "${module.tls_self_signed_cert.leaf_request_pem}"
+output "leaf_cert_request_pem" {
+  value = "${module.tls_self_signed_cert.leaf_cert_request_pem}"
 }
 
-output "leaf_pem" {
-  value = "${module.tls_self_signed_cert.leaf_pem}"
+output "leaf_cert_pem" {
+  value = "${module.tls_self_signed_cert.leaf_cert_pem}"
 }
 
 output "leaf_validity_start_time" {
