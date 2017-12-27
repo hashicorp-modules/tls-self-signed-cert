@@ -1,6 +1,6 @@
-variable "provision" {
-  default     = "true"
-  description = "Override to prevent provisioning resources in this module, defaults to \"true\"."
+variable "count" {
+  default     = "1"
+  description = "Module count, defaults to \"1\"."
 }
 
 variable "name" {
@@ -24,7 +24,7 @@ variable "ecdsa_curve" {
 }
 
 variable "permissions" {
-  description = "The Unix file permission to assign to the cert files (e.g. 0600)."
+  description = "The Unix file permission to assign to the cert files (e.g. 0600). Defaults to \"0600\"."
   default     = "0600"
 }
 
