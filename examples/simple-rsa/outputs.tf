@@ -2,6 +2,18 @@ output "algorithm" {
   value = "${module.tls_self_signed_cert.algorithm}"
 }
 
+output "ca_cert_pem" {
+  value = "${module.tls_self_signed_cert.ca_cert_pem}"
+}
+
+output "ca_cert_validity_start_time" {
+  value = "${module.tls_self_signed_cert.ca_cert_validity_start_time}"
+}
+
+output "ca_cert_validity_end_time" {
+  value = "${module.tls_self_signed_cert.ca_cert_validity_end_time}"
+}
+
 output "ca_private_key_pem" {
   value = "${module.tls_self_signed_cert.ca_private_key_pem}"
 }
@@ -50,12 +62,12 @@ output "leaf_cert_pem" {
   value = "${module.tls_self_signed_cert.leaf_cert_pem}"
 }
 
-output "leaf_validity_start_time" {
-  value = "${module.tls_self_signed_cert.leaf_validity_start_time}"
+output "leaf_cert_validity_start_time" {
+  value = "${module.tls_self_signed_cert.leaf_cert_validity_start_time}"
 }
 
-output "leaf_validity_end_time" {
-  value = "${module.tls_self_signed_cert.leaf_validity_end_time}"
+output "leaf_cert_validity_end_time" {
+  value = "${module.tls_self_signed_cert.leaf_cert_validity_end_time}"
 }
 
 output "zREADME" {

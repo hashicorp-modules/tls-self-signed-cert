@@ -32,7 +32,9 @@ This module doesn't require any environment variables to be set.
 ## Outputs
 
 - `algorithm`: The algorithm that was selected for the key.
-
+- `ca_cert_pem`: The CA cert data in PEM format.
+- `ca_cert_validity_start_time`: The time after which the CA certificate is valid, as an RFC3339 timestamp.
+- `ca_cert_validity_end_time`: The time until which the CA certificate is invalid, as an RFC3339 timestamp.
 - `ca_private_key_pem`: The CA cert private key data in PEM format.
 - `ca_private_key_name`: The CA cert private key filename.
 - `ca_private_key_filename`: The CA cert private key filename with file extension.
@@ -46,8 +48,8 @@ This module doesn't require any environment variables to be set.
 - `leaf_public_key_openssh`: The Leaf cert public key data in OpenSSH authorized_keys format, if the selected private key format is compatible. All RSA keys are supported, and ECDSA keys with curves "P256", "P384" and "P251" are supported. This attribute is empty if an incompatible ECDSA curve is selected.
 - `leaf_cert_request_pem`: The Leaf cert request data in PEM format.
 - `leaf_cert_pem`: The Leaf cert data in PEM format.
-- `leaf_validity_start_time`: The time after which the certificate is valid, as an RFC3339 timestamp.
-- `leaf_validity_end_time`: The time until which the certificate is invalid, as an RFC3339 timestamp.
+- `leaf_cert_validity_start_time`: The time after which the leaf certificate is valid, as an RFC3339 timestamp.
+- `leaf_cert_validity_end_time`: The time until which the leaf certificate is invalid, as an RFC3339 timestamp.
 
 ## Submodules
 
