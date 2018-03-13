@@ -1,6 +1,6 @@
 module "tls_self_signed_cert" {
+  # source = "github.com/hashicorp-modules/tls-self-signed-cert?ref=f-refactor"
   source = "../../../tls-self-signed-cert"
-  # source = "git@github.com:hashicorp-modules/tls-self-signed-cert.git?ref=f-refactor"
 
   count                 = "${var.count}"
   name                  = "${var.name}"
