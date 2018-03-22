@@ -2,7 +2,7 @@ module "tls_self_signed_cert" {
   # source = "github.com/hashicorp-modules/tls-self-signed-cert?ref=f-refactor"
   source = "../../../tls-self-signed-cert"
 
-  count                 = "0"
+  create                = false
   name                  = "no-provision"
   validity_period_hours = "0"
   ca_common_name        = "no-provision"

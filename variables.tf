@@ -1,6 +1,6 @@
-variable "count" {
-  default     = "1"
-  description = "Module count, defaults to \"1\"."
+variable "create" {
+  description = "Create Module, defaults to true."
+  default     = true
 }
 
 variable "name" {

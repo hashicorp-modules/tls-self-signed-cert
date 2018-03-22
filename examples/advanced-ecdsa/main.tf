@@ -2,7 +2,7 @@ module "tls_self_signed_cert" {
   # source = "github.com/hashicorp-modules/tls-self-signed-cert?ref=f-refactor"
   source = "../../../tls-self-signed-cert"
 
-  count                 = "${var.count}"
+  create                = "${var.create}"
   name                  = "${var.name}"
   algorithm             = "${var.algorithm}"
   ecdsa_curve           = "${var.ecdsa_curve}"

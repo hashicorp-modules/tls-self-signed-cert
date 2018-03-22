@@ -14,7 +14,7 @@ This module doesn't require any environment variables to be set.
 
 ## Input Variables
 
-- `count`: [Optional] Module count, defaults to "1".
+- `create`: [Optional] Create Module, defaults to true.
 - `name`: [Optional] Filename to write the private key data to, default to "tls-private-key".
 - `algorithm`: [Optional] The name of the algorithm to use for the key. Currently-supported values are "RSA" and "ECDSA". Defaults to "RSA".
 - `rsa_bits`: [Optional] When algorithm is "RSA", the size of the generated RSA key in bits. Defaults to "2048".
