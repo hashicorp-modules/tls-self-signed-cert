@@ -6,7 +6,8 @@
 - Generates a TLS certificate request for the leaf cert
 - Generates a locally signed leaf cert
 - Encodes the private keys as PEM
-- Downloads the private keys locally and sets the file permissions appropriately
+
+Checkout [examples](./examples) for fully functioning examples.
 
 ## Environment Variables
 
@@ -19,7 +20,6 @@ This module doesn't require any environment variables to be set.
 - `algorithm`: [Optional] The name of the algorithm to use for the key. Currently-supported values are "RSA" and "ECDSA". Defaults to "RSA".
 - `rsa_bits`: [Optional] When algorithm is "RSA", the size of the generated RSA key in bits. Defaults to "2048".
 - `ecdsa_curve`: [Optional] When algorithm is "ECDSA", the name of the elliptic curve to use. May be any one of "P224", "P256", "P384" or "P521". Defaults to "P224".
-- `permissions`: [Optional] The Unix file permission to assign to the cert files (e.g. 0600), defaults to "0600".
 - `validity_period_hours`: [Required] The number of hours after initial issuing that the certificate will become invalid.
 - `ca_allowed_uses`: [Optional] List of keywords from RFC5280 describing a use that is permitted for the CA certificate. For more info and the list of keywords, see https://www.terraform.io/docs/providers/tls/r/self_signed_cert.html#allowed_uses.
 - `ca_common_name`: [Required] The common name to use in the subject of the CA certificate (e.g. hashicorp.com).

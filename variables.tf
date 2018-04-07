@@ -4,8 +4,8 @@ variable "create" {
 }
 
 variable "name" {
-  default     = "tls-self-signed-cert"
   description = "Filename to write the certificate data to, default to \"tls-self-signed-cert\"."
+  default     = "tls-self-signed-cert"
 }
 
 variable "algorithm" {
@@ -21,11 +21,6 @@ variable "rsa_bits" {
 variable "ecdsa_curve" {
   description = "When algorithm is \"ECDSA\", the name of the elliptic curve to use. May be any one of \"P224\", \"P256\", \"P384\" or \"P521\". Defaults to \"P224\""
   default     = "P256"
-}
-
-variable "permissions" {
-  description = "The Unix file permission to assign to the cert files (e.g. 0600). Defaults to \"0600\"."
-  default     = "0600"
 }
 
 variable "validity_period_hours" {
