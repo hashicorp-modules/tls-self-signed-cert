@@ -10,4 +10,5 @@ module "tls_self_signed_cert" {
   common_name           = "${var.common_name}"
   dns_names             = "${var.dns_names}"
   ip_addresses          = "${var.ip_addresses}"
+  download_certs        = true
 }

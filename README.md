@@ -20,14 +20,19 @@ This module doesn't require any environment variables to be set.
 - `algorithm`: [Optional] The name of the algorithm to use for the key. Currently-supported values are "RSA" and "ECDSA". Defaults to "RSA".
 - `rsa_bits`: [Optional] When algorithm is "RSA", the size of the generated RSA key in bits. Defaults to "2048".
 - `ecdsa_curve`: [Optional] When algorithm is "ECDSA", the name of the elliptic curve to use. May be any one of "P224", "P256", "P384" or "P521". Defaults to "P224".
+- `permissions`: [Optional] The Unix file permission to assign to the cert files (e.g. 0600), defaults to "0600".
 - `validity_period_hours`: [Required] The number of hours after initial issuing that the certificate will become invalid.
 - `ca_allowed_uses`: [Optional] List of keywords from RFC5280 describing a use that is permitted for the CA certificate. For more info and the list of keywords, see https://www.terraform.io/docs/providers/tls/r/self_signed_cert.html#allowed_uses.
-- `ca_common_name`: [Required] The common name to use in the subject of the CA certificate (e.g. hashicorp.com).
+- `ca_common_name`: [Optional] The common name to use in the subject of the CA certificate (e.g. hashicorp.com).
 - `organization_name`: [Required] The name of the organization to associate with the certificates (e.g. HashiCorp Inc.).
 - `allowed_uses`: [Required] List of keywords from RFC5280 describing a use that is permitted for the issued certificate. For more info and the list of keywords, see https://www.terraform.io/docs/providers/tls/r/self_signed_cert.html#allowed_uses.
 - `common_name`: [Required] The common name to use in the subject of the certificate (e.g. hashicorp.com).
 - `dns_names`: [Required] List of DNS names for which the certificate will be valid (e.g. foo.hashicorp.com).
 - `ip_addresses`: [Required] List of IP addresses for which the certificate will be valid (e.g. 127.0.0.1).
+- `ca_override`: [Optional] Don't create a CA cert, override with the provided CA to sign certs withr
+- `ca_key_override`: [Optional] CA private key pem override.
+- `ca_cert_override`: [Optional] CA cert pem override.
+- `download_certs`: [Optional] Download certs locally, defaults to false.
 
 ## Outputs
 

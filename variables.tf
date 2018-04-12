@@ -23,6 +23,11 @@ variable "ecdsa_curve" {
   default     = "P256"
 }
 
+variable "permissions" {
+  description = "The Unix file permission to assign to the cert files (e.g. 0600). Defaults to \"0600\"."
+  default     = "0600"
+}
+
 variable "validity_period_hours" {
   description = "The number of hours after initial issuing that the certificate will become invalid."
 }
@@ -40,6 +45,7 @@ variable "ca_allowed_uses" {
 
 variable "ca_common_name" {
   description = "The common name to use in the subject of the CA certificate (e.g. hashicorp.com)."
+  default     = ""
 }
 
 variable "organization_name" {
@@ -68,4 +74,24 @@ variable "dns_names" {
 variable "ip_addresses" {
   description = "List of IP addresses for which the certificate will be valid (e.g. 127.0.0.1)."
   type        = "list"
+}
+
+variable "ca_override" {
+  description = "Don't create a CA cert, override with the provided CA to sign certs with."
+  default     = false
+}
+
+variable "ca_key_override" {
+  description = "CA private key pem override."
+  default     = ""
+}
+
+variable "ca_cert_override" {
+  description = "CA cert pem override."
+  default     = ""
+}
+
+variable "download_certs" {
+  description = "Download certs locally, defaults to false."
+  default     = false
 }
