@@ -67,13 +67,15 @@ variable "common_name" {
 }
 
 variable "dns_names" {
-  description = "List of DNS names for which the certificate will be valid (e.g. foo.hashicorp.com)."
+  description = "List of DNS names for which the certificate will be valid (e.g. foo.hashicorp.com), defaults to empty list."
   type        = "list"
+  default     = []
 }
 
 variable "ip_addresses" {
-  description = "List of IP addresses for which the certificate will be valid (e.g. 127.0.0.1)."
+  description = "List of IP addresses for which the certificate will be valid (e.g. 127.0.0.1), defaults to empty list."
   type        = "list"
+  default     = []
 }
 
 variable "ca_override" {

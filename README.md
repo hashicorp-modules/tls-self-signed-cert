@@ -27,8 +27,8 @@ This module doesn't require any environment variables to be set.
 - `organization_name`: [Required] The name of the organization to associate with the certificates (e.g. HashiCorp Inc.).
 - `allowed_uses`: [Required] List of keywords from RFC5280 describing a use that is permitted for the issued certificate. For more info and the list of keywords, see https://www.terraform.io/docs/providers/tls/r/self_signed_cert.html#allowed_uses.
 - `common_name`: [Required] The common name to use in the subject of the certificate (e.g. hashicorp.com).
-- `dns_names`: [Required] List of DNS names for which the certificate will be valid (e.g. foo.hashicorp.com).
-- `ip_addresses`: [Required] List of IP addresses for which the certificate will be valid (e.g. 127.0.0.1).
+- `dns_names`: [Required] List of DNS names for which the certificate will be valid (e.g. foo.hashicorp.com), defaults to empty list.
+- `ip_addresses`: [Required] List of IP addresses for which the certificate will be valid (e.g. 127.0.0.1), defaults to empty list.
 - `ca_override`: [Optional] Don't create a CA cert, override with the provided CA to sign certs withr
 - `ca_key_override`: [Optional] CA private key pem override.
 - `ca_cert_override`: [Optional] CA cert pem override.
