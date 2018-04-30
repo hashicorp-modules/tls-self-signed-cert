@@ -1,5 +1,5 @@
 module "tls_self_signed_cert" {
-  # source = "github.com/hashicorp-modules/tls-self-signed-cert?ref=f-refactor"
+  # source = "github.com/hashicorp-modules/tls-self-signed-cert"
   source = "../../../tls-self-signed-cert"
 
   create                = "${var.create}"
@@ -16,7 +16,7 @@ module "tls_self_signed_cert" {
 }
 
 module "tls_self_signed_cert_override" {
-  # source = "github.com/hashicorp-modules/tls-self-signed-cert?ref=f-refactor"
+  # source = "github.com/hashicorp-modules/tls-self-signed-cert"
   source = "../../../tls-self-signed-cert"
 
   create                = "${var.create}"
