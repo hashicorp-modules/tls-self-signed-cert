@@ -2,18 +2,6 @@ terraform {
   required_version = ">= 0.11.5"
 }
 
-provider "random" {
-  version = "~> 1.1"
-}
-
-provider "tls" {
-  version = "~> 1.1"
-}
-
-provider "null" {
-  version = "~> 1.0"
-}
-
 resource "random_id" "name" {
   count = "${var.create ? 1 : 0}"
 
