@@ -74,7 +74,7 @@ resource "null_resource" "download_ca_cert" {
 
   # Write the PEM-encoded CA certificate public key to this path (e.g. /etc/tls/ca.crt.pem).
   provisioner "local-exec" {
-    command = "echo '${var.ca_cert_override == "" ? element(concat(tls_self_signed_cert.ca.*.cert_pem, list("")), 0) : var.ca_cert_override}' > ${format("%s-ca.crt.pem", random_id.name.hex)} && chmod ${var.permissions} '${format("%s-ca.crt.pem", random_id.name.hex)}'"
+    command = "echo '${chomp(var.ca_cert_override == "" ? element(concat(tls_self_signed_cert.ca.*.cert_pem, list("")), 0) : var.ca_cert_override)}' > ${format("%s-ca.crt.pem", random_id.name.hex)} && chmod ${var.permissions} '${format("%s-ca.crt.pem", random_id.name.hex)}'"
   }
 }
 
@@ -83,7 +83,7 @@ resource "null_resource" "download_leaf_cert" {
 
   # Write the PEM-encoded certificate public key to this path (e.g. /etc/tls/leaf.crt.pem).
   provisioner "local-exec" {
-    command = "echo '${tls_locally_signed_cert.leaf.cert_pem}' > ${format("%s-leaf.crt.pem", random_id.name.hex)} && chmod ${var.permissions} '${format("%s-leaf.crt.pem", random_id.name.hex)}'"
+    command = "echo '${chomp(tls_locally_signed_cert.leaf.cert_pem)}' > ${format("%s-leaf.crt.pem", random_id.name.hex)} && chmod ${var.permissions} '${format("%s-leaf.crt.pem", random_id.name.hex)}'"
   }
 }
 
@@ -92,6 +92,6 @@ resource "null_resource" "download_leaf_private_key" {
 
   # Write the PEM-encoded leaf certificate private key to this path (e.g. /etc/tls/leaf.key.pem).
   provisioner "local-exec" {
-    command = "echo '${tls_private_key.leaf.private_key_pem}' > ${format("%s-leaf.key.pem", random_id.name.hex)} && chmod ${var.permissions} '${format("%s-leaf.key.pem", random_id.name.hex)}'"
+    command = "echo '${chomp(tls_private_key.leaf.private_key_pem)}' > ${format("%s-leaf.key.pem", random_id.name.hex)} && chmod ${var.permissions} '${format("%s-leaf.key.pem", random_id.name.hex)}'"
   }
 }
