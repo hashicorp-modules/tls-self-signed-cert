@@ -11,3 +11,4 @@ module "tls_self_signed_cert" {
   dns_names             = [""]
   ip_addresses          = [""]
 }
+
